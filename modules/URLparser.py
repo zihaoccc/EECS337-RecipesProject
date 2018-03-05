@@ -5,6 +5,7 @@ from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
+from .ingredientParser import process_ingredient
 
 def get_url(url):
     '''
@@ -34,6 +35,7 @@ def is_good_response(res):
 def parse_recipe(url):
     '''
     Gets the html content of the recipe website
+
     '''
     # init return vars
     ingredients = []
@@ -47,32 +49,17 @@ def parse_recipe(url):
         # get ingredients
         for elem in html.select('.recipe-ingred_txt'):
             ## TODO: need to process ingredient here
-            ingredients.append(elem.text)
+            if elem['class'].pop() == 'white':
+                # last li element not an ingredient
+                break
+            processed_ingredient = process_ingredient(elem.text)
+            ingredients.append(processed_ingredient)
         
         # get instructions
         for elem in html.select('.recipe-directions__list--item'):
+            if len(elem.text) == 0:
+                # last li element not a direction
+                break
             instructions.append(elem.text)
     
     return ingredients, instructions
-
-def process_ingredient(ingredient_line):
-    '''
-    Given an ingredient line, splits the content
-    into relevant ingredient categories
-    '''
-
-    ingredient_obj = {
-        'name': None, 
-        'quantity': None, 
-        'measurement': None, 
-        'descriptor': None, 
-        'preparation': None
-    }
-
-    
-
-    return ingredient_obj
-
-
-## TEST
-parse_recipe('https://www.allrecipes.com/recipe/80827/easy-garlic-broiled-chicken')
