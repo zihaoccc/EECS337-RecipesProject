@@ -3,7 +3,9 @@ import spacy
 nlp = spacy.load('en')
 
 # hardcoded sets
-measurement_types = {'cup', 'tablespoon', 'teaspoon', 'pint', 'ounce', 'quart', 'gallon', 'pound', 'dash', 'pinch', 'clove', 'piece'}
+measurement_types = {'cup', 'tablespoon', 'teaspoon', 'pint', 'ounce', 'quart', 'gallon', 'pound', 'dash', 'pinch', 'clove', 'piece', 'stalk', 'can'}
+measurement_abbr_mapping = {'t':'teaspoon','tsp':'teaspoon','T':'tablespoon','Tbsp':'tablespoon','c':'cup','oz':'ounce','pt':'pint','qt':'quart',
+							'gal':'gallon','lb':'pound','#':'pound'}
 
 def process_ingredient(ingredient_line):
     '''
