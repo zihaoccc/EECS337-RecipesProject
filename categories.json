@@ -19,6 +19,10 @@
 		"category": ["dairy", "non_vegan"],
 		"styles": [],
 		"substitutions": [] 
+	},
+	"tofu": {
+		"category": ["protein", "vegetarian"],
+		"styles": [],
+		"substitutions": [] 
 	}
 }
-
