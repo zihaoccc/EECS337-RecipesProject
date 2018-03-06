@@ -1,0 +1,48 @@
+{"ingredients" :
+ [ { "descriptor": "",
+    "measurement": "cup",
+    "name": "chicken",
+    "preparation": "",
+    "quantity": 2.0},
+  { "descriptor": "",
+    "measurement": "cup",
+    "name": "milk",
+    "preparation": "",
+    "quantity": 1.0},
+  { "descriptor": "",
+    "measurement": "teaspoon",
+    "name": "bread",
+    "preparation": "",
+    "quantity": 0.125},
+  { "descriptor": "",
+    "measurement": "pinch",
+    "name": "apple",
+    "preparation": "",
+    "quantity": 1.0},
+  { "descriptor": "",
+    "measurement": "cup",
+    "name": "tomato",
+    "preparation": "",
+    "quantity": 0.5},
+  { "descriptor": "",
+    "measurement": "",
+    "name": "cheddar cheese",
+    "preparation": "",
+    "quantity": 12.0},
+  { "descriptor": "",
+    "measurement": "",
+    "name": "mayo",
+    "preparation": "drained",
+    "quantity": 1.0},
+  { "descriptor": "",
+    "measurement": "cup",
+    "name": "chips",
+    "preparation": "",
+    "quantity": 2.0}],
+    
+    "directions": [ ]
+    
+    
+    
+    }
+
