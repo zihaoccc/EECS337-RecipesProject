@@ -32,6 +32,7 @@ def is_good_response(res):
             content_type is not None and
             content_type.find('html') > -1)
 
+
 def parse_recipe(url):
     '''
     Gets the html content of the recipe website
@@ -45,6 +46,7 @@ def parse_recipe(url):
     recipe_html = get_url(url)
     if recipe_html is not None:
         html = BeautifulSoup(recipe_html, 'html.parser')
+        servingSize = html.find("meta", {"itemprop":"recipeYield"})['content']
 
         # get ingredients
         for elem in html.select('.recipe-ingred_txt'):
@@ -62,4 +64,4 @@ def parse_recipe(url):
                 break
             instructions.append(elem.text)
     
-    return ingredients, instructions
+    return ingredients, instructions, servingSize
