@@ -1,19 +1,24 @@
 {
-	"meat_protein": ["chicken", "steak", "beef", "pork", "turkey", "bacon", "ham", "fish", "salmon"],
-	"veg_protein": ["tofu", "tempeh", "mushrooms", "lentils"],
-	// sub chicken, steak, pork --> tofu
-	// sub turkey --> tofurkey?
-
-	"non_vegan": ["butter","egg", "yogurt", "milk"],
-	"sub_vegan": [ "coconut oil", "applesauce", "soymilk"],
-	// sub butter --> coconut oil
-	// sub milk --> soymilk
-
-	"italian": ["sausage", " basil", "mozzarella", "parmesan", "ricotta"],
-	"mexican": ["chorizo", "chilis", "cojita"],
-	"east_asian": []
-	// sub sausage --> chorizo
-	// sub basil, parsely, spices --> chilis, cilantro, peppers
-	// sub mozzarella, parmesan, ricotta --> cojita 
-
+	
+	"chicken": {
+		"category": ["protein", "meat"],
+		"styles": [],
+		"substitutions": ["tofu", "tempeh"] 
+	},
+	"bread": {
+		"category": [],
+		"styles": [],
+		"substitutions": [] 
+	},
+	"tomato": {
+		"category": ["veggie"],
+		"styles": [],
+		"substitutions": [] 
+	},
+	"cheese": {
+		"category": ["dairy", "non_vegan"],
+		"styles": [],
+		"substitutions": [] 
+	}
 }
+
