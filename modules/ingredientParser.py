@@ -6,6 +6,11 @@ nlp = spacy.load('en')
 measurement_types = {'cup', 'tablespoon', 'teaspoon', 'pint', 'ounce', 'quart', 'gallon', 'pound', 'dash', 'pinch', 'clove', 'piece', 'stalk', 'can'}
 measurement_abbr_mapping = {'t':'teaspoon','tsp':'teaspoon','T':'tablespoon','Tbsp':'tablespoon','c':'cup','oz':'ounce','pt':'pint','qt':'quart',
 							'gal':'gallon','lb':'pound','#':'pound'}
+TOOLS = ['pan', 'bowl', 'baster', 'knife', 'oven', 'beanpot', 'chip pan', 'cookie sheet', 'cooking pot', 'crepe pan', 'double boiler', 'doufeu', 		 'dutch oven', 'food processor', 'frying pan', 'skillet', 'griddle', 'karahi', 'kettle', 'pan', 'pressure cooker', 'ramekin', 'roasting pan', 		  'roasting rack', 'saucepansauciersaute pan', 'splayed saute pan', 'souffle dish', 'springform pan', 'stockpot', 'tajine', 'tube panwok', 		   'wonder pot', 'pot', 'apple corer', 'apple cutter', 'baster', 'biscuit cutter', 'biscuit press', 'bowl', 'bread knife', 'browning tray', 	 	'butter curler', 'cake and pie server', 'cheese knife', 'cheesecloth', 'knife', 'cherry pitter', 'chinoise', 'cleaver', 'corkscrew', 
+		 'cutting board', 'dough scraper', 'egg poacher', 'egg separator', 'egg slicer', 'egg timer', 'fillet knife', 'fish scaler', 'fish slice', 'flour sifter', 'food mill', 'funnel', 'garlic press', 'grapefruit knife', 'grater', 'gravy strainer', 'ladle', 'lame', 'lemon reamer', 'lemon squeezer', 'mandoline', 'mated colander pot', 'measuring cup', 'measuring spoon', 'grinder', 'tenderiser', 'thermometer', 'melon baller', 'mortar and pestle', 'nutcracker', 'nutmeg grater,oven glove', 'blender', 'fryer', 'pastry bush', 'pastry wheel', 'peeler', 'pepper mill', 'pizza cutter', 'masher', 'potato ricer', 'pot-holder', 'rolling pin', 'salt shaker', 'sieve', 'spoon', 'fork', 'spatula', 'spider', 'tin opener', 'tongs', 'whisk', 'wooden spoon', 'zester', 'microwave']
+PRIMARY_COOKING_METHODS = ['bake', 'steam', 'grill', 'roast', 'boil', 'fry', 'barbeque', 'baste', 'broil', 'poach', 'freeze', 'cure', 'saute']
+SECONDARY_COOKING_METHODS = ['chop', 'grate', 'cut', 'shake', 'mince', 'stir', 'mix', 'crush', 'squeeze', 'beat', 'blend', 'caramelize', 'dice', 'dust',
+							'glaze', 'knead', 'pare', 'shred', 'toss', 'whip', 'sprinkle', 'grease', 'arrange', 'microwave', 'coat', 'turning','preheat', 'broil']
 
 def process_ingredient(ingredient_line):
     '''
