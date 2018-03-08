@@ -5,7 +5,8 @@ import pprint
 pp = pprint.PrettyPrinter(indent=2)
 
 ## TEST
-ingr, dirs, servingSize = parse_recipe('https://www.allrecipes.com/recipe/212451/enchanted-sour-cream-chicken-enchiladas/')
+ingr, dirs, servingSize, tools = parse_recipe('https://www.allrecipes.com/recipe/212451/enchanted-sour-cream-chicken-enchiladas/')
 pp.pprint(ingr)
 pp.pprint(dirs)
 print(servingSize)
+print(tools)

@@ -6,6 +6,7 @@ from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
 from .ingredientParser import process_ingredient
+from .directionParser import process_direction
 
 def get_url(url):
     '''
@@ -41,6 +42,7 @@ def parse_recipe(url):
     # init return vars
     ingredients = []
     instructions = []
+    tools = []
 
     # get html
     recipe_html = get_url(url)
@@ -63,5 +65,7 @@ def parse_recipe(url):
                 # last li element not a direction
                 break
             instructions.append(elem.text)
+            tools += process_direction(elem.text)
+        tools = set(tools)
     
-    return ingredients, instructions, servingSize
+    return ingredients, instructions, servingSize, tools
