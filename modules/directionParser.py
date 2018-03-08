@@ -21,25 +21,30 @@ TOOLS = ['pan', 'bowl', 'baster', 'saucepan', 'knife', 'oven', 'beanpot', 'chip 
          'lemon squeezer', 'mandoline', 'mated colander pot', 'measuring cup', 'measuring spoon', 'grinder', 'tenderiser', 'thermometer', 'melon baller',
          'mortar and pestle', 'nutcracker', 'nutmeg grater', 'oven glove', 'blender', 'fryer', 'pastry bush', 'pastry wheel', 'peeler', 'pepper mill', 
          'pizza cutter', 'masher', 'potato ricer', 'pot-holder', 'rolling pin', 'salt shaker', 'sieve', 'spoon', 'fork', 'spatula', 'spider', 'tin opener',
-         'tongs', 'whisk', 'wooden spoon', 'zester', 'microwave', 'cylinder', 'Aluminum foil', 'steamer', 'broiler rack', 'grate', 'shallow glass dish', 'wok', 'dish', 'broiler tray']
+         'tongs', 'whisk', 'wooden spoon', 'zester', 'microwave', 'cylinder', 'Aluminum foil', 'steamer', 'broiler rack', 'grate', 'shallow glass dish', 'wok', 
+         'dish', 'broiler tray']
+
 PRIMARY_COOKING_METHODS = ['bake', 'steam', 'grill', 'roast', 'boil', 'fry', 'barbeque', 'baste', 'broil', 'poach', 'freeze', 'cure', 'saute']
 SECONDARY_COOKING_METHODS = ['chop', 'grate', 'cut', 'shake', 'mince', 'stir', 'mix', 'crush', 'squeeze', 'beat', 'blend', 'caramelize', 'dice', 'dust',
                              'glaze', 'knead', 'pare', 'shred', 'toss', 'whip', 'sprinkle', 'grease', 'arrange', 'microwave', 'coat', 'turning','preheat', 
-                             'broil']
+                             'broil', 'marinate', 'brushing', 'slice']
 
-point_words = ['in', 'In', 'into', 'Into', 'place', 'Place', 'bottom of', 'Bottom of', 'to', 'To', 'place', 'Place', 'top of', 'Top of', 'fill', 'Fill', 'from', 'From']
+point_words = ['in', 'In', 'into', 'Into', 'place', 'Place', 'bottom of', 'Bottom of', 'to', 'To', 'place', 'Place', 'top of', 'Top of', 'fill', 'Fill', 'from',
+               'From']
+
 tool_list = []
-
+primary_methods = []
+secondary_method = []
 
 def process_direction(direction_line):
     words_in_direction = direction_line.split(' ')
     get_tools(words_in_direction) 
-    return tool_list
+    get_methods(words_in_direction)
+    return tool_list, primary_methods, secondary_method
 
 
 def get_tools(words_in_direction):
     for i in range(len(words_in_direction)):
-        test = words_in_direction[i]
         if ((words_in_direction[i] == 'bottom' or words_in_direction[i] == 'top') and (i < len(words_in_direction))):
             if words_in_direction[i+1] == 'of':
                 diff = len(words_in_direction) - 1 - i
@@ -82,7 +87,14 @@ def get_tools(words_in_direction):
                 tool_list.append(temp)            
 
 def get_methods(words_in_direction):
-    pass
+    for i in words_in_direction:
+        cur_word = i.lower()
+        cur_word = cur_word.strip(string.punctuation)
+        if cur_word in PRIMARY_COOKING_METHODS:
+            primary_methods.append(cur_word)
+        elif cur_word in SECONDARY_COOKING_METHODS:
+            secondary_method.append(cur_word)
+            
 
 def get_steps(words_in_direction):
     pass
