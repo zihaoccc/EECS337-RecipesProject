@@ -34,13 +34,13 @@
         "category": [],
         "styles": [],
         "substitutions": {
-            "to healthy": "skim milk",
-            "to italian": "",
-            "to meaty": "burger patty",
-            "to mexican": "horchata",
-            "to southern": "gravy",
-            "to vegan": "soy milk",
-            "to vegetarian": ""
+            "to healthy": "whole wheat bread",
+            "to italian": "ciabatta",
+            "to meaty": "bread",
+            "to mexican": "tortilla",
+            "to southern": "cornbread",
+            "to vegan": "lettuce wrap",
+            "to vegetarian": "bread"
         }
     },
     "cheese": {
@@ -85,8 +85,8 @@
             "to italian": "raw pasta noodles",
             "to mexican": "tortilla chips",
             "to southern": "fries",
-            "to vegan": "",
-            "to vegetarian": ""
+            "to vegan": "chips",
+            "to vegetarian": "chips"
         }
     },
     "mayo": {
@@ -100,7 +100,7 @@
             "to italian": "pesto",
             "to meaty": "",
             "to mexican": "sour cream",
-            "to southern": "gravy",
+            "to southern": "hot sauce",
             "to vegan": "coconut oil",
             "to vegetarian": "coconut oil"
         }
@@ -116,9 +116,9 @@
             "to italian": "",
             "to meaty": "beef broth",
             "to mexican": "horchata",
-            "to southern": "gravy",
+            "to southern": "heavy cream",
             "to vegan": "soy milk",
-            "to vegetarian": ""
+            "to vegetarian": "milk"
         }
     },
     "tofu": {
@@ -147,7 +147,7 @@
             "to italian": "",
             "to meaty": "cream",
             "to mexican": "salsa",
-            "to southern": "gravy",
+            "to southern": "fried green tomatoes",
             "to vegan": "soy milk",
             "to vegetarian": ""
         }

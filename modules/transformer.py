@@ -17,7 +17,7 @@ def ask_user(recipe):
         if response == "y":
             break
          
-    print(possible_transformation)
+    print("Transforming this recipe "+possible_transformation)
     transform_recipe(possible_transformation, recipe)
     
 
@@ -48,22 +48,22 @@ def transform_recipe(dimension, old_recipe):
     elif dimension == "to healthy":
         # less oil/butter/etc
         #TO-DO
-        pass
+        new_recipe = toHealthy(new_recipe, ingredient_kb)
 
     elif dimension == "to southern":
         # add gravy
         #TO-DO
-        pass
+        new_recipe = toSouthern(new_recipe, ingredient_kb)
     elif dimension == "to mexican":
         # replace cheese with cojita
         # replace a spice with chili powder
         #TO-DO
-        pass
+        new_recipe = toMexican(new_recipe, ingredient_kb)
     elif dimension == "to italian":
         # add olive oil
         # cheese to parm
         #TO-DO
-        pass
+        new_recipe = toItalian(new_recipe, ingredient_kb)
     else:
         print("you dunce. You never specified a transformation.")
         
@@ -103,15 +103,68 @@ def toMeaty(new_recipe, ingredient_kb):
         for category in ingredient_kb[ingredient]["category"]:
             if category == "veggie":
                 new_recipe["ingredients"][i]["name"] = "bacon"
+            if category == "meat":
+                new_recipe["ingredients"][i]["quantity"] = 2 * new_recipe["ingredients"][i]["quantity"]
+                
             if category == "protein":
                 new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to meaty"])
 
-    # TO-DO need to add double quantity of meat
+    return new_recipe
 
-
+def toHealthy(new_recipe, ingredient_kb):
+    
+    for i in range(len(new_recipe["ingredients"])):
+        ingredient = str(new_recipe["ingredients"][i]["name"])
+        if ingredient not in ingredient_kb:
+            add_ingredient_kb(ingredient, ingredient_kb)
+        for category in ingredient_kb[ingredient]["category"]:
+            if category == "non healthy":
+                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to healthy"])
     return new_recipe
 
 
+def toSouthern(new_recipe, ingredient_kb):
+    
+    for i in range(len(new_recipe["ingredients"])):
+        ingredient = str(new_recipe["ingredients"][i]["name"])
+        if ingredient not in ingredient_kb:
+            add_ingredient_kb(ingredient, ingredient_kb)
+        
+        if not ingredient_kb[ingredient]["substitutions"]["to southern"] == "":
+            new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to southern"])
+        """
+         for category in ingredient_kb[ingredient]["category"]:
+            if category == "non healthy":
+                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to healthy"])
+        """
+       
+    return new_recipe
+    
+    
+def toMexican(new_recipe, ingredient_kb):
+    
+    for i in range(len(new_recipe["ingredients"])):
+        ingredient = str(new_recipe["ingredients"][i]["name"])
+        if ingredient not in ingredient_kb:
+            add_ingredient_kb(ingredient, ingredient_kb)
+
+        if not ingredient_kb[ingredient]["substitutions"]["to mexican"] == "":
+            new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to mexican"])
+
+    return new_recipe
+
+def toItalian(new_recipe, ingredient_kb):
+    for i in range(len(new_recipe["ingredients"])):
+        ingredient = str(new_recipe["ingredients"][i]["name"])
+        if ingredient not in ingredient_kb:
+            add_ingredient_kb(ingredient, ingredient_kb)
+
+        if not ingredient_kb[ingredient]["substitutions"]["to italian"] == "":
+            new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to italian"])
+
+    return new_recipe
+    
+    
 ## ADD TO INGREDIENTS_KB
 def add_ingredient_kb(name, kb):
     answer = input("Do you want to add "+ name + " to the knowledge base? [y or n] \t")
