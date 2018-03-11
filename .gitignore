@@ -73,3 +73,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 modules/untitled-1.py
+
+# other
+.vscode/
+*.DS_STORE
