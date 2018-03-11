@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import spacy
-nlp = spacy.load('en')
+from nltk.stem import WordNetLemmatizer
+wordnet_lemmatizer = WordNetLemmatizer()
 
 # hardcoded sets
 measurement_types = {'cup', 'tablespoon', 'teaspoon', 'pint', 'ounce', 'quart', 'gallon', 'pound', 'dash', 'pinch', 'clove', 'piece', 'stalk', 'can'}
@@ -88,7 +88,7 @@ class Ingredient:
 
             # get measurement type
             potential_measurement = split_by_space[0] if split_by_space[0][0] != '(' else split_by_space[2]
-            potential_measurement_lemmatized = nlp(potential_measurement)[0].lemma_
+            potential_measurement_lemmatized = wordnet_lemmatizer.lemmatize(potential_measurement)
 
             if potential_measurement_lemmatized in measurement_types:
                 measurement_type = potential_measurement_lemmatized
