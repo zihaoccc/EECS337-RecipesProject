@@ -1,7 +1,7 @@
 import string
 
-TOOLS_WORDS = ['pan', 'bowl', 'baster', 'saucepan', 'knife', 'beanpot', 'chip','pan', 'cookie', 'sheet', 'cooking', 'pot', 'crepe', 'pan', 'double', 'boiler', 
-               'doufeu', 'dutch', 'oven', 'food', 'processor', 'frying', 'skillet', 'griddle', 'karahi', 'kettle', 'pressure' 'cooker', 'ramekin', 'roasting', 
+TOOLS_WORDS = ['pan', 'bowl', 'baster', 'saucepan', 'knife', 'beanpot', 'chip','pan', 'cookie', 'sheet', 'cooking', 'pot', 'crepe', 'double', 'boiler', 
+               'doufeu', 'dutch', 'oven', 'food', 'processor', 'frying', 'skillet', 'griddle', 'karahi', 'kettle', 'pressure', 'cooker', 'ramekin', 'roasting', 
                'roasting', 'rack', 'splayed', 'saute','souffle', 'dish', 'springform', 'stockpot', 'tajine', 'tube', 'panwok', 	
                'wonder', 'apple', 'corer', 'cutter', 'baster', 'biscuit', 'biscuit' 'press', 'baking', 'bread', 'browning', 'tray', 	
                'butter', 'curler', 'cake', 'and', 'pie', 'server', 'cheese', 'cheesecloth', 'cherry', 'pitter', 'chinoise', 'cleaver', 'corkscrew', 
@@ -10,7 +10,7 @@ TOOLS_WORDS = ['pan', 'bowl', 'baster', 'saucepan', 'knife', 'beanpot', 'chip','
                'squeezer', 'mandoline', 'mated', 'colander', 'measuring', 'cup', 'measuring', 'spoon', 'grinder', 'tenderiser', 'thermometer', 'melon', 'baller',
                'mortar', 'pestle', 'nutcracker', 'nutmeg', 'grater', 'glove', 'blender', 'fryer', 'pastry', 'bush', 'wheel', 'peeler', 'pepper', 
                'pizza', 'masher', 'potato' ,'ricer', 'pot-holder', 'rolling', 'pin', 'salt', 'shaker', 'sieve', 'fork', 'spatula', 'spider', 'tin', 'opener',
-               'tongs', 'whisk', 'wooden', 'zester', 'microwave', 'cylinder', 'Aluminum' ,'foil', 'steamer', 'shallow', 'glass', 'broiler', 'wok']
+               'tongs', 'whisk', 'wooden', 'zester', 'microwave', 'cylinder', 'aluminum' ,'foil', 'steamer', 'shallow', 'glass', 'broiler', 'wok', 'slow', 'cooker']
 TOOLS = ['pan', 'bowl', 'baster', 'saucepan', 'knife', 'oven', 'beanpot', 'chip pan', 'cookie sheet', 'cooking pot', 'crepe pan', 'double boiler', 'doufeu', 	
          'dutch oven', 'food processor', 'frying pan', 'skillet', 'griddle', 'karahi', 'kettle', 'pan', 'pressure cooker', 'ramekin', 'roasting pan', 
          'roasting rack', 'saucepansauciersaute pan', 'splayed saute pan', 'souffle dish', 'springform pan', 'stockpot', 'tajine', 'tube panwok', 	
@@ -22,22 +22,21 @@ TOOLS = ['pan', 'bowl', 'baster', 'saucepan', 'knife', 'oven', 'beanpot', 'chip 
          'mortar and pestle', 'nutcracker', 'nutmeg grater', 'oven glove', 'blender', 'fryer', 'pastry bush', 'pastry wheel', 'peeler', 'pepper mill', 
          'pizza cutter', 'masher', 'potato ricer', 'pot-holder', 'rolling pin', 'salt shaker', 'sieve', 'spoon', 'fork', 'spatula', 'spider', 'tin opener',
          'tongs', 'whisk', 'wooden spoon', 'zester', 'microwave', 'cylinder', 'Aluminum foil', 'steamer', 'broiler rack', 'grate', 'shallow glass dish', 'wok', 
-         'dish', 'broiler tray']
+         'dish', 'broiler tray', 'slow cooker']
 
 PRIMARY_COOKING_METHODS = ['bake', 'steam', 'grill', 'roast', 'boil', 'fry', 'barbeque', 'baste', 'broil', 'poach', 'freeze', 'cure', 'saute']
 SECONDARY_COOKING_METHODS = ['chop', 'grate', 'cut', 'shake', 'mince', 'stir', 'mix', 'crush', 'squeeze', 'beat', 'blend', 'caramelize', 'dice', 'dust',
                              'glaze', 'knead', 'pare', 'shred', 'toss', 'whip', 'sprinkle', 'grease', 'arrange', 'microwave', 'coat', 'turning','preheat', 
-                             'broil', 'marinate', 'brushing', 'slice']
+                             'broil', 'marinate', 'brushing', 'slice', 'season']
 
-point_words = ['in', 'In', 'into', 'Into', 'place', 'Place', 'bottom of', 'Bottom of', 'to', 'To', 'place', 'Place', 'top of', 'Top of', 'fill', 'Fill', 'from',
-               'From']
+point_words = ['in', 'into', 'place', 'bottom of', 'to', 'place', 'top of', 'fill', 'from']
 
 tool_list = []
 primary_methods = []
 secondary_method = []
 
 def process_direction(direction_line):
-    words_in_direction = direction_line.split(' ')
+    words_in_direction = direction_line.lower().split(' ')
     get_tools(words_in_direction) 
     get_methods(words_in_direction)
     return tool_list, primary_methods, secondary_method

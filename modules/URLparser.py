@@ -5,7 +5,7 @@ from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
-from .ingredientParser import process_ingredient
+from .ingredientParser import Ingredient
 from .directionParser import process_direction
 
 
@@ -55,16 +55,6 @@ def parse_recipe(url):
         servingSize = html.find("meta", {"itemprop":"recipeYield"})['content']
         preprocessed_recipe['serving_size'] = servingSize
 
-        # get ingredients
-        for elem in html.select('.recipe-ingred_txt'):
-            ## TODO: need to process ingredient here
-            if elem['class'].pop() == 'white':
-                # last li element not an ingredient
-                break
-            processed_ingredient = process_ingredient(elem.text)
-            ingredients.append(processed_ingredient)
-        
-        preprocessed_recipe['ingredients'] = ingredients
         # get instructions
         for elem in html.select('.recipe-directions__list--item'):
             if len(elem.text) == 0:
@@ -73,11 +63,26 @@ def parse_recipe(url):
             instructions.append(elem.text)
             tools, primary_methods, secondary_methods = process_direction(elem.text)
          
+        # insert instruction data into recipe json
+        preprocessed_recipe['instructions'] = instructions
         tools = set(tools)
         preprocessed_recipe['tools'] = tools
         primary_methods = set(primary_methods)
         preprocessed_recipe['primary_methods'] = primary_methods
         secondary_methods = set(secondary_methods)
         preprocessed_recipe['secondary_methods'] = secondary_methods
+
+
+        # get ingredients
+        for elem in html.select('.recipe-ingred_txt'):
+            ## TODO: need to process ingredient here
+            if elem['class'].pop() == 'white':
+                # last li element not an ingredient
+                break
+            processed_ingredient = Ingredient(elem.text, instructions).get_object()
+            ingredients.append(processed_ingredient)
+        
+        # insert ingredient data into recipe json
+        preprocessed_recipe['ingredients'] = ingredients
     
     return preprocessed_recipe
