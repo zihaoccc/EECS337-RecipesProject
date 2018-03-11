@@ -115,7 +115,7 @@ class Ingredient:
             if (split_by_space[len(split_by_space) - 2] == 'chicken' and
                 split_by_space[len(split_by_space) - 1] != 'soup' and
                 split_by_space[len(split_by_space) - 1] != 'broth'):
-               chicken_index_from_last = 2
+                chicken_index_from_last = 2
             elif split_by_space[len(split_by_space) - 3] == 'chicken':
                 chicken_index_from_last = 3
             
