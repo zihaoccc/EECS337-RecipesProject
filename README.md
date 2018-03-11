@@ -8,6 +8,8 @@ Python 3
 
 ### Install dependencies
 ``` $ pip install -r requirements.txt ```
+``` $ python -m nltk.downloader wordnet ```
+NOTE: use python3 and pip3 if you dont have the default python set to Python3
 
 ### Run program
 ``` $ python main.py ```
