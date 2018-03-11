@@ -73,6 +73,7 @@ def parse_recipe(url):
             instructions.append(elem.text)
             tools, primary_methods, secondary_methods = process_direction(elem.text)
          
+        preprocessed_recipe['instructions'] = instructions
         tools = set(tools)
         preprocessed_recipe['tools'] = tools
         primary_methods = set(primary_methods)
@@ -81,3 +82,19 @@ def parse_recipe(url):
         preprocessed_recipe['secondary_methods'] = secondary_methods
     
     return preprocessed_recipe
+
+
+def get_whole_recipe_steps():
+    preprocessed_recipe = parse_recipe('https://www.allrecipes.com/recipe/212451/enchanted-sour-cream-chicken-enchiladas/')
+    ingredients = preprocessed_recipe['ingredients']
+    tools = preprocessed_recipe['tools']
+    primary_methods = preprocessed_recipe['primary_methods']
+    secondary_methods = preprocessed_recipe['secondary_methods']
+    instructions = preprocessed_recipe['instructions']
+    
+    print(ingredients)
+    print(tools)
+    print(primary_methods)
+    print(secondary_methods)
+    for i in instructions:
+        print(i)
