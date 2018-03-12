@@ -43,6 +43,18 @@
             "to vegetarian": "bread"
         }
     },
+    "bread crumbs": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "bread crumbs",
+            "to italian": "bread crumbs",
+            "to mexican": "bread crumbs",
+            "to southern": "bread crumbs",
+            "to vegan": "bread crumbs",
+            "to vegetarian": "bread crumbs"
+        }
+    },
     "cheese": {
         "category": [
             "dairy",
@@ -89,6 +101,80 @@
             "to vegetarian": "chips"
         }
     },
+    "chopped green chilies": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [
+            "mexican"
+        ],
+        "substitutions": {
+            "to healthy": "green chilies",
+            "to italian": "red pepper flakes",
+            "to mexican": "green chilies",
+            "to southern": "green chilies",
+            "to vegan": "green chilies",
+            "to vegetarian": "green chilies"
+        }
+    },
+    "corn tortillas": {
+        "category": [
+            "grain"
+        ],
+        "styles": [
+            "mexican"
+        ],
+        "substitutions": {
+            "to healthy": "corn tortillas",
+            "to italian": "piadina",
+            "to mexican": "corn tortillas",
+            "to southern": "corn bread",
+            "to vegan": "corn tortillas",
+            "to vegetarian": "corn tortillas"
+        }
+    },
+    "eggs": {
+        "category": [
+            "non vegan"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "egg whites",
+            "to italian": "eggs",
+            "to mexican": "eggs",
+            "to southern": "eggs",
+            "to vegan": "[\"apple sauce\"]",
+            "to vegetarian": "eggs"
+        }
+    },
+    "flour": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "whole wheat flour",
+            "to italian": "flour",
+            "to mexican": "flour",
+            "to southern": "flour",
+            "to vegan": "flour",
+            "to vegetarian": "flour"
+        }
+    },
+    "fresh basil": {
+        "category": [
+            "spice"
+        ],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "basil",
+            "to italian": "basil",
+            "to mexican": "cilantro",
+            "to southern": "bbq spices",
+            "to vegan": "basil",
+            "to vegetarian": "basil"
+        }
+    },
     "mayo": {
         "category": [
             "dairy",
@@ -121,6 +207,144 @@
             "to vegetarian": "milk"
         }
     },
+    "mozzarella": {
+        "category": [
+            "dairy",
+            "non vegan"
+        ],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "mozzarella",
+            "to italian": "mozzarella",
+            "to mexican": "cotija cheese",
+            "to southern": "cheddar cheese",
+            "to vegan": "vegan cheese",
+            "to vegetarian": "mozzarella"
+        }
+    },
+    "oil": {
+        "category": [
+            "oil"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "oil",
+            "to italian": "oil",
+            "to mexican": "oil",
+            "to southern": "oil",
+            "to vegan": "oil",
+            "to vegetarian": "oil"
+        }
+    },
+    "olive oil": {
+        "category": [
+            "oil"
+        ],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "olive oil",
+            "to italian": "olive oil",
+            "to mexican": "canola oil",
+            "to southern": "olive oil",
+            "to vegan": "olive oil",
+            "to vegetarian": "olive oil"
+        }
+    },
+    "parmesan cheese": {
+        "category": [
+            "dairy",
+            "non vegan"
+        ],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "parmesan cheese",
+            "to italian": "parmesan cheese",
+            "to mexican": "cotija cheese",
+            "to southern": "parmesan cheese",
+            "to vegan": "vegan cheese",
+            "to vegetarian": "parmesan cheese"
+        }
+    },
+    "pepper": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "pepper",
+            "to italian": "pepper",
+            "to mexican": "pepper",
+            "to southern": "pepper",
+            "to vegan": "pepper",
+            "to vegetarian": "pepper"
+        }
+    },
+    "salt": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "salt",
+            "to italian": "salt",
+            "to mexican": "salt",
+            "to southern": "salt",
+            "to vegan": "salt",
+            "to vegetarian": "salt"
+        }
+    },
+    "salt and freshly ground black pepper to taste": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "pepper",
+            "to italian": "oregano",
+            "to mexican": "pepper",
+            "to southern": "pepper",
+            "to vegan": "salt and freshly ground black pepper",
+            "to vegetarian": "salt"
+        }
+    },
+    "shredded Monterey Jack cheese": {
+        "category": [
+            "dairy",
+            "non vegan"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "Monterey Jack cheese",
+            "to italian": "parmesan cheese",
+            "to mexican": "Cotija cheese",
+            "to southern": "Monterey Jack cheese",
+            "to vegan": "vegan cheese",
+            "to vegetarian": "Monterey Jack cheese"
+        }
+    },
+    "sour cream": {
+        "category": [
+            "dairy",
+            "non vegan"
+        ],
+        "styles": [
+            "mexican"
+        ],
+        "substitutions": {
+            "to healthy": "yogurt",
+            "to italian": "sour cream",
+            "to mexican": "sour cream",
+            "to southern": "heavy cream",
+            "to vegan": "vegan sour cream",
+            "to vegetarian": "sour cream"
+        }
+    },
     "tofu": {
         "category": [
             "protein",
@@ -150,6 +374,20 @@
             "to southern": "fried green tomatoes",
             "to vegan": "soy milk",
             "to vegetarian": ""
+        }
+    },
+    "tomato sauce": {
+        "category": [],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "tomato sauce",
+            "to italian": "tomato sauce",
+            "to mexican": "salsa",
+            "to southern": "tomato sauce",
+            "to vegan": "tomato sauce",
+            "to vegetarian": "tomato sauce"
         }
     },
     "turkey": {

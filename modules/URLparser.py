@@ -88,7 +88,7 @@ def parse_recipe(url):
 
 
 def get_whole_recipe_steps():
-    preprocessed_recipe = parse_recipe('https://www.allrecipes.com/recipe/212451/enchanted-sour-cream-chicken-enchiladas/')
+    preprocessed_recipe = parse_recipe('https://www.allrecipes.com/recipe/223042/chicken-parmesan/')
     ingredients = preprocessed_recipe['ingredients']
     tools = preprocessed_recipe['tools']
     primary_methods = preprocessed_recipe['primary_methods']
@@ -101,3 +101,4 @@ def get_whole_recipe_steps():
     print(secondary_methods)
     for i in instructions:
         print(i)
+    return preprocessed_recipe

@@ -2,11 +2,11 @@ import copy
 import json
 
 
-with open("../parsedRecipe.json") as json_data:
-    recipe_data = json.load(json_data)
-    # print(recipe_data)
+#with open("../parsedRecipe.json") as json_data:
+#    recipe_data = json.load(json_data)
+#    # print(recipe_data)
 
-with open("../categories.json") as json_data:
+with open("./categories.json") as json_data:
     ingredient_kb = json.load(json_data)
 
 def ask_user(recipe):
@@ -75,7 +75,7 @@ def transform_recipe(dimension, old_recipe):
 def toVegan(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
-        ingredient = str(new_recipe["ingredients"][i]["name"])
+        ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
         for category in ingredient_kb[ingredient]["category"]:
@@ -86,7 +86,7 @@ def toVegan(new_recipe, ingredient_kb):
 def toVegetarian(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
-        ingredient = str(new_recipe["ingredients"][i]["name"])
+        ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
         for category in ingredient_kb[ingredient]["category"]:
@@ -97,7 +97,7 @@ def toVegetarian(new_recipe, ingredient_kb):
 def toMeaty(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
-        ingredient = str(new_recipe["ingredients"][i]["name"])
+        ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
         for category in ingredient_kb[ingredient]["category"]:
@@ -114,7 +114,7 @@ def toMeaty(new_recipe, ingredient_kb):
 def toHealthy(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
-        ingredient = str(new_recipe["ingredients"][i]["name"])
+        ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
         for category in ingredient_kb[ingredient]["category"]:
@@ -126,7 +126,7 @@ def toHealthy(new_recipe, ingredient_kb):
 def toSouthern(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
-        ingredient = str(new_recipe["ingredients"][i]["name"])
+        ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
         
@@ -144,7 +144,7 @@ def toSouthern(new_recipe, ingredient_kb):
 def toMexican(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
-        ingredient = str(new_recipe["ingredients"][i]["name"])
+        ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
 
@@ -155,7 +155,7 @@ def toMexican(new_recipe, ingredient_kb):
 
 def toItalian(new_recipe, ingredient_kb):
     for i in range(len(new_recipe["ingredients"])):
-        ingredient = str(new_recipe["ingredients"][i]["name"])
+        ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
 
@@ -187,7 +187,7 @@ def add_ingredient_kb(name, kb):
     
     kb[name] = new_ingredient
         
-    with open('../categories.json', 'w') as outfile:
+    with open('./categories.json', 'w') as outfile:
         json.dump(kb, outfile, indent=4, sort_keys=True)
 
-ask_user(recipe_data)
+#ask_user(recipe_data)
