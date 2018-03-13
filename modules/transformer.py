@@ -78,9 +78,10 @@ def toVegan(new_recipe, ingredient_kb):
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
-        for category in ingredient_kb[ingredient]["category"]:
-            if category == "non_vegan":
-                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegan"])
+        else:
+            for category in ingredient_kb[ingredient]["category"]:
+                if category == "non_vegan":
+                    new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegan"])
     return new_recipe
 
 def toVegetarian(new_recipe, ingredient_kb):
@@ -89,9 +90,10 @@ def toVegetarian(new_recipe, ingredient_kb):
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
-        for category in ingredient_kb[ingredient]["category"]:
-            if category == "meat":
-                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegetarian"])
+        else:
+            for category in ingredient_kb[ingredient]["category"]:
+                if category == "meat":
+                    new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegetarian"])
     return new_recipe
 
 def toMeaty(new_recipe, ingredient_kb):
@@ -100,14 +102,14 @@ def toMeaty(new_recipe, ingredient_kb):
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
-        for category in ingredient_kb[ingredient]["category"]:
-            if category == "veggie":
-                new_recipe["ingredients"][i]["name"] = "bacon"
-            if category == "meat":
-                new_recipe["ingredients"][i]["quantity"] = 2 * new_recipe["ingredients"][i]["quantity"]
-                
-            if category == "protein":
-                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to meaty"])
+        else:
+            for category in ingredient_kb[ingredient]["category"]:
+                if category == "veggie":
+                    new_recipe["ingredients"][i]["name"] = "bacon"
+                if category == "meat":
+                    new_recipe["ingredients"][i]["quantity"] = 2 * new_recipe["ingredients"][i]["quantity"]   
+                if category == "protein":
+                    new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to meaty"])
 
     return new_recipe
 
@@ -117,9 +119,14 @@ def toHealthy(new_recipe, ingredient_kb):
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
             add_ingredient_kb(ingredient, ingredient_kb)
-        for category in ingredient_kb[ingredient]["category"]:
-            if category == "non healthy":
-                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to healthy"])
+        #catch individual ingredient
+        else:
+            if ingredient == ("butter" or "sugar" or "oil" or "salt"):
+                new_recipe["ingredients"][i]["quantity"] =  round(new_recipe["ingredients"][i]["quantity"] / 2.0, 2)
+        #catch other cases 
+            for category in ingredient_kb[ingredient]["category"]:
+                if category == ("non healthy" or "oil" or "sugar") :
+                    new_recipe["ingredients"][i]["quantity"] =  round(new_recipe["ingredients"][i]["quantity"] / 2.0, 2)
     return new_recipe
 
 

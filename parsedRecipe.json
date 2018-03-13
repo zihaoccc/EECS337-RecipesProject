@@ -38,7 +38,12 @@
     "measurement": "cup",
     "name": "chips",
     "preparation": "",
-    "quantity": 2.0}],
+    "quantity": 2.0},
+    { "descriptor": "",
+    "measurement": "cup",
+    "name": "butter",
+    "preparation": "",
+    "quantity": 4.0}],
     
     "directions": [ ]
     

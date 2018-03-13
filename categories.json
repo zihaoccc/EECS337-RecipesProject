@@ -55,6 +55,51 @@
             "to vegetarian": "bread crumbs"
         }
     },
+    "brown sugar": {
+        "category": [
+            "sugar"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "honey",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "butter": {
+        "category": [
+            "dairy",
+            "non vegan"
+        ],
+        "styles": [
+            "southern"
+        ],
+        "substitutions": {
+            "to healthy": "coconut oil",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "more butter",
+            "to vegan": "coconut oil",
+            "to vegetarian": ""
+        }
+    },
+    "carrots": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "cheese": {
         "category": [
             "dairy",
@@ -117,6 +162,18 @@
             "to vegetarian": "green chilies"
         }
     },
+    "chopped walnuts": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "corn tortillas": {
         "category": [
             "grain"
@@ -131,6 +188,21 @@
             "to southern": "corn bread",
             "to vegan": "corn tortillas",
             "to vegetarian": "corn tortillas"
+        }
+    },
+    "egg": {
+        "category": [
+            "protein",
+            "non vegan"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "gravy eggs",
+            "to vegan": "vegan eggs",
+            "to vegetarian": ""
         }
     },
     "eggs": {
@@ -189,6 +261,21 @@
             "to southern": "hot sauce",
             "to vegan": "coconut oil",
             "to vegetarian": "coconut oil"
+        }
+    },
+    "meat": {
+        "category": [
+            "meat",
+            "non vegan"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "tofu",
+            "to vegetarian": "tofu"
         }
     },
     "milk": {
@@ -254,6 +341,20 @@
             "to vegetarian": "olive oil"
         }
     },
+    "onions": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "parmesan cheese": {
         "category": [
             "dairy",
@@ -271,6 +372,20 @@
             "to vegetarian": "parmesan cheese"
         }
     },
+    "parsley": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "pepper": {
         "category": [
             "spice"
@@ -283,6 +398,60 @@
             "to southern": "pepper",
             "to vegan": "pepper",
             "to vegetarian": "pepper"
+        }
+    },
+    "potatoes": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "pumpkin": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "corn",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "pumpkin pie spice": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "basil",
+            "to mexican": "chili powder",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "red wine": {
+        "category": [],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "salt": {
@@ -316,6 +485,7 @@
     "shredded Monterey Jack cheese": {
         "category": [
             "dairy",
+            "cheese",
             "non vegan"
         ],
         "styles": [],
@@ -343,6 +513,20 @@
             "to southern": "heavy cream",
             "to vegan": "vegan sour cream",
             "to vegetarian": "sour cream"
+        }
+    },
+    "sugar": {
+        "category": [
+            "non healthy"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "honey",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "tofu": {
