@@ -1,6 +1,6 @@
 import copy
 import json
-
+from .URLparser import print_recipe
 
 #with open("../parsedRecipe.json") as json_data:
 #    recipe_data = json.load(json_data)
@@ -14,7 +14,7 @@ def reload_kb():
 def ask_user(recipe):
     possible_transformation = ["to vegan", "to vegetarian", "to meaty", "to healthy", "to southern", "to mexican", "to italian", "no change"]
     
-    print ("Pleaase input the number of the transformation from the list below:")
+    print ("Please input the number of the transformation from the list below:")
     for i in range(len(possible_transformation)):
         print(str(i+1) + '. ' + possible_transformation[i])
     response = int(input())
@@ -72,7 +72,8 @@ def transform_recipe(dimension, old_recipe):
         print("you dunce. You never specified a transformation.")
         
 
-    print(new_recipe)
+
+    print_recipe(new_recipe)
 
 
 ## TRANSFORMATION HELPERS
@@ -86,9 +87,14 @@ def toVegan(new_recipe, ingredient_kb):
         if ingredient_flag:
             for category in ingredient_kb[ingredient]["category"]:
                 if category == "non vegan":
-                    new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegan"])
+                    new_ingredient = str(ingredient_kb[ingredient]["substitutions"]["to vegan"])
+                    new_recipe["ingredients"][i]["name"] = new_ingredient
+                    new_recipe = swap_ingredients_in_directions(new_recipe, ingredient, new_ingredient)
+                #new_recipe = #HELPER FUNCTION look for ingredient, swap out with ingredient_kb[ingredient]["substitutions"]["to vegan"]
                 if category == "meat":
-                    new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegetarian"])
+                    new_ingredient = str(ingredient_kb[ingredient]["substitutions"]["to vegetarian"])
+                    new_recipe["ingredients"][i]["name"] = new_ingredient
+                    new_recipe = swap_ingredients_in_directions(new_recipe, ingredient, new_ingredient)
     return new_recipe
 
 def toVegetarian(new_recipe, ingredient_kb):
@@ -102,7 +108,9 @@ def toVegetarian(new_recipe, ingredient_kb):
         if ingredient_flag:
             for category in ingredient_kb[ingredient]["category"]:
                 if category == "meat":
-                    new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegetarian"])
+                    new_ingredient = str(ingredient_kb[ingredient]["substitutions"]["to vegetarian"])
+                    new_recipe["ingredients"][i]["name"] = new_ingredient
+                    new_recipe = swap_ingredients_in_directions(new_recipe, ingredient, new_ingredient)
     return new_recipe
 
 def toMeaty(new_recipe, ingredient_kb):
@@ -116,12 +124,13 @@ def toMeaty(new_recipe, ingredient_kb):
         if ingredient_flag:
             for category in ingredient_kb[ingredient]["category"]:
                 if category == "veggie":
-                    new_recipe["ingredients"][i]["name"] = "bacon"
+                    new_ingredient = "bacon"
+                    new_recipe["ingredients"][i]["name"] = new_ingredient
+                    new_recipe = swap_ingredients_in_directions(new_recipe, ingredient, new_ingredient)
                 if category == "meat":
-                    new_recipe["ingredients"][i]["quantity"] = 2 * new_recipe["ingredients"][i]["quantity"]   
-                if category == "protein":
-                    new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to meaty"])
-
+                    new_quantity =  str(2 * new_recipe["ingredients"][i]["quantity"])
+                    new_recipe["ingredients"][i]["quantity"] =   new_quantity
+                    new_recipe = swap_ingredients_in_directions(new_recipe, str(new_recipe["ingredients"][i]["quantity"]), str(new_quantity))
     return new_recipe
 
 def toHealthy(new_recipe, ingredient_kb):
@@ -135,11 +144,15 @@ def toHealthy(new_recipe, ingredient_kb):
         #catch individual ingredient
         if ingredient_flag:
             if ingredient == ("butter" or "sugar" or "oil" or "salt"):
-                new_recipe["ingredients"][i]["quantity"] =  round(new_recipe["ingredients"][i]["quantity"] / 2.0, 2)
+                new_quantity = round(new_recipe["ingredients"][i]["quantity"] / 2.0, 2)
+                new_recipe["ingredients"][i]["quantity"] =  new_quantity
+                new_recipe = swap_ingredients_in_directions(new_recipe, str(new_recipe["ingredients"][i]["quantity"]), str(new_quantity))
         #catch other cases 
             for category in ingredient_kb[ingredient]["category"]:
                 if category == ("non healthy" or "oil" or "sugar") :
-                    new_recipe["ingredients"][i]["quantity"] =  round(new_recipe["ingredients"][i]["quantity"] / 2.0, 2)
+                    new_quantity = round(new_recipe["ingredients"][i]["quantity"] / 2.0, 2)
+                    new_recipe["ingredients"][i]["quantity"] =  new_quantity
+                    new_recipe = swap_ingredients_in_directions(new_recipe, str(new_recipe["ingredients"][i]["quantity"]), str(new_quantity))
     return new_recipe
 
 
@@ -153,13 +166,14 @@ def toSouthern(new_recipe, ingredient_kb):
             ingredient_kb = reload_kb()
         if ingredient_flag:
             if not ingredient_kb[ingredient]["substitutions"]["to southern"] == "":
-                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to southern"])
+                new_ingredient = str(ingredient_kb[ingredient]["substitutions"]["to southern"])
+                new_recipe["ingredients"][i]["name"] = new_ingredient
+                new_recipe = swap_ingredients_in_directions(new_recipe, ingredient, new_ingredient)
         """
          for category in ingredient_kb[ingredient]["category"]:
             if category == "non healthy":
                 new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to healthy"])
-        """
-       
+        """      
     return new_recipe
     
     
@@ -173,8 +187,9 @@ def toMexican(new_recipe, ingredient_kb):
             ingredient_kb = reload_kb()
         if ingredient_flag:
             if not ingredient_kb[ingredient]["substitutions"]["to mexican"] == "":
-                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to mexican"])
-
+                new_ingredient = str(ingredient_kb[ingredient]["substitutions"]["to mexican"])
+                new_recipe["ingredients"][i]["name"] = new_ingredient
+                new_recipe = swap_ingredients_in_directions(new_recipe, ingredient, new_ingredient)
     return new_recipe
 
 def toItalian(new_recipe, ingredient_kb):
@@ -186,8 +201,9 @@ def toItalian(new_recipe, ingredient_kb):
             ingredient_kb = reload_kb()
         if ingredient_flag:
             if not ingredient_kb[ingredient]["substitutions"]["to italian"] == "":
-                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to italian"])
-
+                new_ingredient = str(ingredient_kb[ingredient]["substitutions"]["to italian"])
+                new_recipe["ingredients"][i]["name"] = new_ingredient
+                new_recipe = swap_ingredients_in_directions(new_recipe, ingredient, new_ingredient)
     return new_recipe
     
     
@@ -218,4 +234,10 @@ def add_ingredient_kb(name, kb):
 
     return True
 
-#ask_user(recipe_data)
+def swap_ingredients_in_directions(recipe, old_ingredient, new_ingredient):
+
+    for idx, direction in enumerate(recipe["instructions"]):
+        new_direction = direction.replace(old_ingredient,new_ingredient)
+        recipe["instructions"][idx] = new_direction
+
+    return recipe

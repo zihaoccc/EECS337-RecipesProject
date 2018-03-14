@@ -14,6 +14,23 @@
             "to vegetarian": ""
         }
     },
+    "bacon": {
+        "category": [
+            "protein",
+            "meat",
+            "non vegan",
+            "non healthy"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "turkey bacon",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "seitan bacon",
+            "to vegetarian": "seitan bacon"
+        }
+    },
     "beef": {
         "category": [
             "protein",
@@ -67,6 +84,20 @@
             "to southern": "bread crumbs",
             "to vegan": "bread crumbs",
             "to vegetarian": "bread crumbs"
+        }
+    },
+    "broccoli": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "brown sugar": {
@@ -256,7 +287,7 @@
             "to italian": "eggs",
             "to mexican": "eggs",
             "to southern": "eggs",
-            "to vegan": "[\"apple sauce\"]",
+            "to vegan": "vegan eggs",
             "to vegetarian": "eggs"
         }
     },
@@ -302,6 +333,21 @@
             "to southern": "hot sauce",
             "to vegan": "coconut oil",
             "to vegetarian": "coconut oil"
+        }
+    },
+    "mayonnaise": {
+        "category": [
+            "non vegan",
+            "non healthy"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "light mayo",
+            "to italian": "pesto",
+            "to mexican": "sour cream",
+            "to southern": "hot sauce",
+            "to vegan": "coconut oil",
+            "to vegetarian": "mayo"
         }
     },
     "meat": {
@@ -380,6 +426,20 @@
             "to southern": "olive oil",
             "to vegan": "olive oil",
             "to vegetarian": "olive oil"
+        }
+    },
+    "onion": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "onions": {
@@ -481,6 +541,20 @@
             "to vegetarian": ""
         }
     },
+    "raisins": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "red wine": {
         "category": [],
         "styles": [
@@ -537,6 +611,18 @@
             "to southern": "Monterey Jack cheese",
             "to vegan": "vegan cheese",
             "to vegetarian": "Monterey Jack cheese"
+        }
+    },
+    "sliced almonds": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "sour cream": {
@@ -646,6 +732,20 @@
         }
     },
     "vanilla extract": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "vinegar": {
         "category": [
             "spice"
         ],
