@@ -1,5 +1,6 @@
 import copy
 import json
+import re
 from .URLparser import print_recipe
 
 #with open("../parsedRecipe.json") as json_data:
@@ -209,22 +210,65 @@ def toItalian(new_recipe, ingredient_kb):
     
 ## ADD TO INGREDIENTS_KB
 def add_ingredient_kb(name, kb):
-    answer = input("Do you want to add "+ name + " to the knowledge base? [y or n] \t")
+    categories = ['protein', 'meat', 'vegetarian', 'dairy', 'veggie',  'non vegan', 'spice', 'oil']
+    styles = ['italian', 'mexican', 'southern']
+
+    print()
+    answer = input("Do you want to add "+ name + " to the knowledge base? [y or n] ")
 
     if answer == 'n':
         return False
 
-    category = eval(input("What category (or categories) is this ingredient? Write your answer as a list containing ['protein', 'meat | vegetarian', 'dairy', 'veggie | non vegan'] \t"))
-    styles = eval(input("In what style of cooking would you find is ingredient? Write your answer as a list ['italian', 'mexican', 'southern'] \t "))
+
+    print("What category (or categories) is this ingredient? Write your answer as a list of numbers separated by a space. (Press Enter to skip)")
+    print("1: protein\n2: meat\n3: vegetarian\n4: dairy\n5: veggie\n6: non vegan\n7: spice\n8: oil")
+    print("e.g. given chicken, input: 1 2 6")
+    category_input = input().split(" ")
+    ingredient_category = []
+
+    while(True):
+        if category_input[0] == '':
+            break
+        
+        for num in category_input:
+            if num.isdigit() and int(num) > 0 and int(num) <= len(categories):
+                ingredient_category.append(categories[int(num)-1])
+            else:
+                print("Wrong input please try again")
+                category_input = input().split(" ")
+                ingredient_category = []
+                continue
+        break
+
+
+    print("In what style of cooking would you find is ingredient? Write your answer as a list of numbers separated by a space. (Press Enter to skip)")
+    print("1: italian \n2: mexican \n3: southern")
+    print("e.g. given pasta, input: 1")
+    styles_input = input("").split(" ")
+    ingredient_styles = []
+
+    while(True):
+        if styles_input[0] == '':
+            break
+        
+        for num in styles_input:
+            if num.isdigit() and int(num) > 0 and int(num) <= len(styles):
+                ingredient_styles.append(styles[int(num)-1])
+            else:
+                print("Wrong input please try again")
+                styles_input = input().split(" ")
+                ingredient_styles = []
+                continue
+        break
     
     substitutes = {}
     for dimension in ["to vegan", "to vegetarian", "to healthy", "to southern", "to mexican", "to italian"]:
-        response = input("What is a substitute for "+ name +" if you were to change this "+ dimension+"?: \t")
+        response = input("What is a substitute for "+ name +" if you were to change this "+ dimension+"? (Press enter to skip) ")
         substitutes[dimension] = response
      
     new_ingredient = {}
-    new_ingredient["category"] = category
-    new_ingredient["styles"] = styles
+    new_ingredient["category"] = ingredient_category
+    new_ingredient["styles"] = ingredient_styles
     new_ingredient["substitutions"] = substitutes
     
     kb[name] = new_ingredient
@@ -237,7 +281,8 @@ def add_ingredient_kb(name, kb):
 def swap_ingredients_in_directions(recipe, old_ingredient, new_ingredient):
 
     for idx, direction in enumerate(recipe["instructions"]):
-        new_direction = direction.replace(old_ingredient,new_ingredient)
+        insensitive_ingredient = re.compile(old_ingredient, re.IGNORECASE)
+        new_direction = insensitive_ingredient.sub(new_ingredient, direction)
         recipe["instructions"][idx] = new_direction
 
     return recipe
