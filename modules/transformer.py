@@ -19,7 +19,7 @@ def ask_user(recipe):
         print(str(i+1) + '. ' + possible_transformation[i])
     response = int(input())
     while (True):
-        if response >= 1 or response <= len(possible_transformation):
+        if response >= 1 and response <= len(possible_transformation):
             break;
         print("input is invalid, please input a number again: ")
         response = input()
