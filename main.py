@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from modules import parse_recipe
-from modules import get_whole_recipe_steps
-from modules import ask_user 
+from modules import parse_recipe, print_recipe, ask_user
 
-import pprint
-pp = pprint.PrettyPrinter(indent=2)
+# Prompt for url and get recipe 
+url = input('Input url for recipe: ') 
+recipe = parse_recipe(url) 
+print_recipe(recipe)
 
-## TEST
-ask_user(get_whole_recipe_steps())
+# Ask user for possible transformations
+ask_user(recipe)

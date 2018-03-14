@@ -8,6 +8,8 @@ from bs4 import BeautifulSoup
 from .ingredientParser import Ingredient
 from .directionParser import process_direction
 
+import pprint
+pp = pprint.PrettyPrinter(indent=2)
 
 def get_url(url):
     '''
@@ -87,18 +89,24 @@ def parse_recipe(url):
     return preprocessed_recipe
 
 
-def get_whole_recipe_steps():
-    preprocessed_recipe = parse_recipe('https://www.allrecipes.com/recipe/26315/cheesecake/')
-    ingredients = preprocessed_recipe['ingredients']
-    tools = preprocessed_recipe['tools']
-    primary_methods = preprocessed_recipe['primary_methods']
-    secondary_methods = preprocessed_recipe['secondary_methods']
-    instructions = preprocessed_recipe['instructions']
-    
-    print(ingredients)
-    print(tools)
-    print(primary_methods)
-    print(secondary_methods)
-    for i in instructions:
-        print(i)
-    return preprocessed_recipe
+def print_recipe(recipe):    
+    print('Ingredients: ')
+    pp.pprint(recipe['ingredients'])
+    print()
+
+    print('Tools: ')
+    pp.pprint(recipe['tools'])
+    print()
+
+    print('Primary Cooking Methods: ')
+    pp.pprint(recipe['primary_methods'])
+    print()
+
+    print('Secondary Cooking Methods: ')
+    pp.pprint(recipe['secondary_methods'])
+    print()
+
+    print('Instructions: ')
+    for idx, instruction in enumerate(recipe['instructions']):
+        print("{}. {}".format(idx+1, instruction))
+        print()

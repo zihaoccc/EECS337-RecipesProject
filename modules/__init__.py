@@ -1,3 +1,2 @@
-from .URLparser import parse_recipe
-from .URLparser import get_whole_recipe_steps
+from .URLparser import parse_recipe, print_recipe
 from .transformer import ask_user
