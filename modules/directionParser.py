@@ -24,10 +24,10 @@ TOOLS = ['pan', 'bowl', 'baster', 'saucepan', 'knife', 'oven', 'beanpot', 'chip 
          'tongs', 'whisk', 'wooden spoon', 'zester', 'microwave', 'cylinder', 'Aluminum foil', 'steamer', 'broiler rack', 'grate', 'shallow glass dish', 'wok', 
          'dish', 'broiler tray', 'slow cooker']
 
-PRIMARY_COOKING_METHODS = ['bake', 'steam', 'grill', 'roast', 'boil', 'fry', 'barbeque', 'baste', 'broil', 'poach', 'freeze', 'cure', 'saute']
+PRIMARY_COOKING_METHODS = ['bake', 'steam', 'grill', 'roast', 'boil', 'fry', 'barbeque', 'baste', 'broil', 'poach', 'freeze', 'cure', 'saute', 'cook']
 SECONDARY_COOKING_METHODS = ['chop', 'grate', 'cut', 'shake', 'mince', 'stir', 'mix', 'crush', 'squeeze', 'beat', 'blend', 'caramelize', 'dice', 'dust',
                              'glaze', 'knead', 'pare', 'shred', 'toss', 'whip', 'sprinkle', 'grease', 'arrange', 'microwave', 'coat', 'turning','preheat', 
-                             'broil', 'marinate', 'brushing', 'slice', 'season']
+                             'broil', 'marinate', 'brushing', 'slice', 'season', 'whisk', 'heat']
 
 point_words = ['in', 'into', 'place', 'bottom of', 'to', 'place', 'top of', 'fill', 'from']
 
@@ -93,7 +93,3 @@ def get_methods(words_in_direction):
             primary_methods.append(cur_word)
         elif cur_word in SECONDARY_COOKING_METHODS:
             secondary_method.append(cur_word)
-            
-
-def get_steps(words_in_direction):
-    pass
