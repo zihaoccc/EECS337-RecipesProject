@@ -30,6 +30,20 @@
             "to vegetarian": "tofu"
         }
     },
+    "blueberries": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "bread": {
         "category": [],
         "styles": [],
@@ -103,7 +117,7 @@
     "cheese": {
         "category": [
             "dairy",
-            "non_vegan"
+            "non vegan"
         ],
         "styles": [],
         "substitutions": {
@@ -190,6 +204,33 @@
             "to vegetarian": "corn tortillas"
         }
     },
+    "cream cheese": {
+        "category": [
+            "dairy",
+            "non vegan"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "low fat cream cream cheese",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "vegan cream cheese",
+            "to vegetarian": ""
+        }
+    },
+    "crust": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "egg": {
         "category": [
             "protein",
@@ -250,7 +291,7 @@
     "mayo": {
         "category": [
             "dairy",
-            "non_vegan"
+            "non vegan"
         ],
         "styles": [],
         "substitutions": {
@@ -281,7 +322,7 @@
     "milk": {
         "category": [
             "dairy",
-            "non_vegan"
+            "non vegan"
         ],
         "styles": [],
         "substitutions": {
@@ -515,6 +556,20 @@
             "to vegetarian": "sour cream"
         }
     },
+    "strawberries": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "sugar": {
         "category": [
             "non healthy"
@@ -588,6 +643,35 @@
             "to southern": "beef",
             "to vegan": "tofu",
             "to vegetarian": "tofu"
+        }
+    },
+    "vanilla extract": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "white sugar": {
+        "category": [
+            "sugar",
+            "non healthy"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "honey",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     }
 }

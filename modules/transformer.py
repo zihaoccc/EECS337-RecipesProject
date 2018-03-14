@@ -6,8 +6,10 @@ import json
 #    recipe_data = json.load(json_data)
 #    # print(recipe_data)
 
-with open("./categories.json") as json_data:
-    ingredient_kb = json.load(json_data)
+def reload_kb():
+    with open("./categories.json") as json_data:
+        ingredient_kb = json.load(json_data)
+    return ingredient_kb
 
 def ask_user(recipe):
     possible_transformation = ["to vegan", "to vegetarian", "to meaty", "to healthy", "to southern", "to mexican", "to italian", "no change"]
@@ -31,19 +33,16 @@ def transform_recipe(dimension, old_recipe):
     
     """
     new_recipe = copy.deepcopy(old_recipe)
-
+    ingredient_kb = reload_kb()
 
     # pick what transformations to make based on the dimension passed in    
     if dimension == "to vegan":
-         # meat_protein -> veggie_protein
-        new_recipe = toVegetarian(new_recipe, ingredient_kb)
         #animal products -> alternatives
         new_recipe = toVegan(new_recipe, ingredient_kb)
-         
-    
+        
     elif dimension == "to vegetarian":
         # meat_protein -> veggie_protein
-        new_recipe = toVegan(new_recipe, ingredient_kb)
+        new_recipe = toVegetarian(new_recipe, ingredient_kb)
     
     
     elif dimension == "to meaty":
@@ -78,24 +77,29 @@ def transform_recipe(dimension, old_recipe):
 
 ## TRANSFORMATION HELPERS
 def toVegan(new_recipe, ingredient_kb):
-    
     for i in range(len(new_recipe["ingredients"])):
+        ingredient_flag = True
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
-            add_ingredient_kb(ingredient, ingredient_kb)
-        else:
+            ingredient_flag = add_ingredient_kb(ingredient, ingredient_kb)
+            ingredient_kb = reload_kb()
+        if ingredient_flag:
             for category in ingredient_kb[ingredient]["category"]:
-                if category == "non_vegan":
+                if category == "non vegan":
                     new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegan"])
+                if category == "meat":
+                    new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegetarian"])
     return new_recipe
 
 def toVegetarian(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
+        ingredient_flag = True 
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
-            add_ingredient_kb(ingredient, ingredient_kb)
-        else:
+            ingredient_flag = add_ingredient_kb(ingredient, ingredient_kb)
+            ingredient_kb = reload_kb()
+        if ingredient_flag:
             for category in ingredient_kb[ingredient]["category"]:
                 if category == "meat":
                     new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to vegetarian"])
@@ -104,10 +108,12 @@ def toVegetarian(new_recipe, ingredient_kb):
 def toMeaty(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
+        ingredient_flag = True
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
-            add_ingredient_kb(ingredient, ingredient_kb)
-        else:
+            ingredient_flag = add_ingredient_kb(ingredient, ingredient_kb)
+            ingredient_kb = reload_kb()
+        if ingredient_flag:
             for category in ingredient_kb[ingredient]["category"]:
                 if category == "veggie":
                     new_recipe["ingredients"][i]["name"] = "bacon"
@@ -121,11 +127,13 @@ def toMeaty(new_recipe, ingredient_kb):
 def toHealthy(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
+        ingredient_flag = True
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
-            add_ingredient_kb(ingredient, ingredient_kb)
+            ingredient_flag = add_ingredient_kb(ingredient, ingredient_kb)
+            ingredient_kb = reload_kb()
         #catch individual ingredient
-        else:
+        if ingredient_flag:
             if ingredient == ("butter" or "sugar" or "oil" or "salt"):
                 new_recipe["ingredients"][i]["quantity"] =  round(new_recipe["ingredients"][i]["quantity"] / 2.0, 2)
         #catch other cases 
@@ -138,12 +146,14 @@ def toHealthy(new_recipe, ingredient_kb):
 def toSouthern(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
+        ingredient_flag = True
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
-            add_ingredient_kb(ingredient, ingredient_kb)
-        
-        if not ingredient_kb[ingredient]["substitutions"]["to southern"] == "":
-            new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to southern"])
+            ingredient_flag = add_ingredient_kb(ingredient, ingredient_kb)
+            ingredient_kb = reload_kb()
+        if ingredient_flag:
+            if not ingredient_kb[ingredient]["substitutions"]["to southern"] == "":
+                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to southern"])
         """
          for category in ingredient_kb[ingredient]["category"]:
             if category == "non healthy":
@@ -156,23 +166,27 @@ def toSouthern(new_recipe, ingredient_kb):
 def toMexican(new_recipe, ingredient_kb):
     
     for i in range(len(new_recipe["ingredients"])):
+        ingredient_flag = True
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
-            add_ingredient_kb(ingredient, ingredient_kb)
-
-        if not ingredient_kb[ingredient]["substitutions"]["to mexican"] == "":
-            new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to mexican"])
+            ingredient_flag = add_ingredient_kb(ingredient, ingredient_kb)
+            ingredient_kb = reload_kb()
+        if ingredient_flag:
+            if not ingredient_kb[ingredient]["substitutions"]["to mexican"] == "":
+                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to mexican"])
 
     return new_recipe
 
 def toItalian(new_recipe, ingredient_kb):
     for i in range(len(new_recipe["ingredients"])):
+        ingredient_flag = True
         ingredient = str(new_recipe["ingredients"][i]["name"]).lower()
         if ingredient not in ingredient_kb:
-            add_ingredient_kb(ingredient, ingredient_kb)
-
-        if not ingredient_kb[ingredient]["substitutions"]["to italian"] == "":
-            new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to italian"])
+            ingredient_flag = add_ingredient_kb(ingredient, ingredient_kb)
+            ingredient_kb = reload_kb()
+        if ingredient_flag:
+            if not ingredient_kb[ingredient]["substitutions"]["to italian"] == "":
+                new_recipe["ingredients"][i]["name"] = str(ingredient_kb[ingredient]["substitutions"]["to italian"])
 
     return new_recipe
     
@@ -182,7 +196,7 @@ def add_ingredient_kb(name, kb):
     answer = input("Do you want to add "+ name + " to the knowledge base? [y or n] \t")
 
     if answer == 'n':
-        return
+        return False
 
     category = eval(input("What category (or categories) is this ingredient? Write your answer as a list containing ['protein', 'meat | vegetarian', 'dairy', 'veggie | non vegan'] \t"))
     styles = eval(input("In what style of cooking would you find is ingredient? Write your answer as a list ['italian', 'mexican', 'southern'] \t "))
@@ -201,5 +215,7 @@ def add_ingredient_kb(name, kb):
         
     with open('./categories.json', 'w') as outfile:
         json.dump(kb, outfile, indent=4, sort_keys=True)
+
+    return True
 
 #ask_user(recipe_data)

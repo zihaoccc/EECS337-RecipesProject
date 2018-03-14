@@ -88,7 +88,7 @@ def parse_recipe(url):
 
 
 def get_whole_recipe_steps():
-    preprocessed_recipe = parse_recipe('https://www.allrecipes.com/recipe/25200/slow-cooker-beef-stew-iv')
+    preprocessed_recipe = parse_recipe('https://www.allrecipes.com/recipe/26315/cheesecake/')
     ingredients = preprocessed_recipe['ingredients']
     tools = preprocessed_recipe['tools']
     primary_methods = preprocessed_recipe['primary_methods']
