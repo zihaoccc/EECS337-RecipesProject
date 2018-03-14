@@ -10,15 +10,20 @@ with open("./categories.json") as json_data:
     ingredient_kb = json.load(json_data)
 
 def ask_user(recipe):
+    possible_transformation = ["to vegan", "to vegetarian", "to meaty", "to healthy", "to southern", "to mexican", "to italian", "no change"]
     
-    for possible_transformation in ["to vegan", "to vegetarian", "to meaty", "to healthy", "to southern", "to mexican", "to italian","double the amount", "at all"]:
-        response = input("Would you like to transform this recipe "+ possible_transformation + "? [y or n] \t")
+    print ("Pleaase input the number of the transformation from the list below:")
+    for i in range(len(possible_transformation)):
+        print(str(i+1) + '. ' + possible_transformation[i])
+    response = int(input())
+    while (True):
+        if response >= 1 or response <= len(possible_transformation):
+            break;
+        print("input is invalid, please input a number again: ")
+        response = input()
         
-        if response == "y":
-            break
-         
-    print("Transforming this recipe "+possible_transformation)
-    transform_recipe(possible_transformation, recipe)
+    print("Transforming this recipe "+possible_transformation[response-1])
+    transform_recipe(possible_transformation[response-1], recipe)
     
 
 def transform_recipe(dimension, old_recipe):
