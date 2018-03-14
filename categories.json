@@ -73,9 +73,54 @@
             "to vegetarian": "tofu"
         }
     },
+    "beef chuck roast": {
+        "category": [
+            "protein",
+            "meat",
+            "non vegan"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "tofu",
+            "to vegetarian": "tofu"
+        }
+    },
+    "beef stock": {
+        "category": [
+            "meat",
+            "non vegan"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "veggie stock",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "gravy",
+            "to vegan": "veggie stock",
+            "to vegetarian": "veggie stock"
+        }
+    },
     "black olives": {
         "category": [
             "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "black pepper": {
+        "category": [
+            "spice"
         ],
         "styles": [],
         "substitutions": {
@@ -324,6 +369,22 @@
             "to vegetarian": ""
         }
     },
+    "chopped green chiles": {
+        "category": [
+            "spice"
+        ],
+        "styles": [
+            "mexican"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "truffles",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "chopped green chilies": {
         "category": [
             "veggie"
@@ -476,6 +537,22 @@
             "to vegetarian": ""
         }
     },
+    "crushed tomatoes": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "salsa",
+            "to southern": "creamy tomatoes",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "crust": {
         "category": [],
         "styles": [],
@@ -568,6 +645,22 @@
             "to healthy": "",
             "to italian": "",
             "to mexican": "chili peppers",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "garlic cloves": {
+        "category": [
+            "spice"
+        ],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
             "to southern": "",
             "to vegan": "",
             "to vegetarian": ""
@@ -668,6 +761,22 @@
             "to italian": "",
             "to mexican": "cinnamon sugar",
             "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "hot pepper sauce (such as tabasco\u00ae)": {
+        "category": [
+            "spice"
+        ],
+        "styles": [
+            "mexican"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "truffle oil",
+            "to mexican": "",
+            "to southern": "gravy",
             "to vegan": "",
             "to vegetarian": ""
         }
@@ -815,6 +924,20 @@
             "to southern": "cheddar cheese",
             "to vegan": "vegan cheese",
             "to vegetarian": "mozzarella"
+        }
+    },
+    "mushrooms": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "mustard": {
@@ -1038,6 +1161,22 @@
             "to italian": "",
             "to mexican": "",
             "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "red pepper flakes": {
+        "category": [
+            "spice"
+        ],
+        "styles": [
+            "mexican"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "parmesan cheese",
+            "to mexican": "",
+            "to southern": "shredded cheese",
             "to vegan": "",
             "to vegetarian": ""
         }

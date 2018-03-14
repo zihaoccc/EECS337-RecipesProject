@@ -241,7 +241,7 @@ def add_ingredient_kb(name, kb):
         break
 
 
-    print("In what style of cooking would you find is ingredient? Write your answer as a list of numbers separated by a space. (Press Enter to skip)")
+    print("In what style of cooking would you find this ingredient? Write your answer as a list of numbers separated by a space. (Press Enter to skip)")
     print("1: italian \n2: mexican \n3: southern")
     print("e.g. given pasta, input: 1")
     styles_input = input("").split(" ")
