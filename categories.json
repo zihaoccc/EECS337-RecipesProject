@@ -31,6 +31,18 @@
             "to vegetarian": "seitan bacon"
         }
     },
+    "baking soda": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "beef": {
         "category": [
             "protein",
@@ -45,6 +57,34 @@
             "to southern": "bbq beef",
             "to vegan": "tofu",
             "to vegetarian": "tofu"
+        }
+    },
+    "black olives": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "black pepper to taste": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "blueberries": {
@@ -131,11 +171,44 @@
             "to vegetarian": ""
         }
     },
+    "buttermilk": {
+        "category": [
+            "dairy",
+            "non vegan"
+        ],
+        "styles": [
+            "southern"
+        ],
+        "substitutions": {
+            "to healthy": "skim milk",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "soy milk",
+            "to vegetarian": ""
+        }
+    },
     "carrots": {
         "category": [
             "veggie"
         ],
         "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "cayenne pepper": {
+        "category": [
+            "spice"
+        ],
+        "styles": [
+            "mexican"
+        ],
         "substitutions": {
             "to healthy": "",
             "to italian": "",
@@ -191,6 +264,20 @@
             "to vegetarian": "chips"
         }
     },
+    "chocolate chips": {
+        "category": [
+            "non healthy"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "vegan chocolate",
+            "to vegetarian": ""
+        }
+    },
     "chopped green chilies": {
         "category": [
             "veggie"
@@ -208,6 +295,57 @@
         }
     },
     "chopped walnuts": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "chops": {
+        "category": [
+            "protein",
+            "meat"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "lamb chops",
+            "to italian": "",
+            "to mexican": "carnitas",
+            "to southern": "",
+            "to vegan": "tofu",
+            "to vegetarian": "tofu"
+        }
+    },
+    "cinnamon": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "cocoa powder": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "container frozen apple cider concentrate": {
         "category": [],
         "styles": [],
         "substitutions": {
@@ -247,6 +385,18 @@
             "to mexican": "",
             "to southern": "",
             "to vegan": "vegan cream cheese",
+            "to vegetarian": ""
+        }
+    },
+    "cream of tartar": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
             "to vegetarian": ""
         }
     },
@@ -317,6 +467,100 @@
             "to southern": "bbq spices",
             "to vegan": "basil",
             "to vegetarian": "basil"
+        }
+    },
+    "garlic": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "chili peppers",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "garlic powder to taste": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "garlic powder",
+            "to mexican": "chili powder",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "green bell pepper": {
+        "category": "veggie",
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "green onions": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "lemon juice": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "orange zest",
+            "to mexican": "lime juice",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "lettuce": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "mashed bananas": {
+        "category": [
+            "veggie"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "mayo": {
@@ -487,6 +731,21 @@
             "to vegetarian": ""
         }
     },
+    "pecorino romano cheese": {
+        "category": [
+            "dairy",
+            "non vegan"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "cotija cheese",
+            "to southern": "cheddar cheese",
+            "to vegan": "vegan cheese",
+            "to vegetarian": ""
+        }
+    },
     "pepper": {
         "category": [
             "spice"
@@ -502,6 +761,18 @@
         }
     },
     "potatoes": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "poultry seasoning": {
         "category": [],
         "styles": [],
         "substitutions": {
@@ -569,6 +840,50 @@
             "to vegetarian": ""
         }
     },
+    "refried beans": {
+        "category": [
+            "protein",
+            "vegetarian"
+        ],
+        "styles": [
+            "mexican",
+            "southern"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "black beans",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "rice": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "orzo",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "salsa": {
+        "category": [],
+        "styles": [
+            "mexican"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "diced tomatoes",
+            "to mexican": "",
+            "to southern": "bbq sauce",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "salt": {
         "category": [
             "spice"
@@ -595,6 +910,32 @@
             "to southern": "pepper",
             "to vegan": "salt and freshly ground black pepper",
             "to vegetarian": "salt"
+        }
+    },
+    "seasoning salt to taste": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "sherry": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "marsala",
+            "to mexican": "",
+            "to southern": "red wine",
+            "to vegan": "",
+            "to vegetarian": ""
         }
     },
     "shredded Monterey Jack cheese": {
@@ -642,6 +983,34 @@
             "to vegetarian": "sour cream"
         }
     },
+    "soy sauce": {
+        "category": [
+            "spice"
+        ],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "balsamic vinegar",
+            "to mexican": "tabasco sauce",
+            "to southern": "bbq sauce",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "spaghetti": {
+        "category": [],
+        "styles": [
+            "italian"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "rice",
+            "to southern": "rice",
+            "to vegan": "whole wheat spaghetti",
+            "to vegetarian": ""
+        }
+    },
     "strawberries": {
         "category": [
             "veggie"
@@ -666,6 +1035,22 @@
             "to italian": "",
             "to mexican": "",
             "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "taco seasoning mix": {
+        "category": [
+            "spice"
+        ],
+        "styles": [
+            "mexican"
+        ],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "garlic powder",
+            "to mexican": "",
+            "to southern": "bbq seasoning",
             "to vegan": "",
             "to vegetarian": ""
         }
@@ -759,6 +1144,18 @@
             "to vegetarian": ""
         }
     },
+    "water": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "",
+            "to southern": "",
+            "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
     "white sugar": {
         "category": [
             "sugar",
@@ -771,6 +1168,18 @@
             "to mexican": "",
             "to southern": "",
             "to vegan": "",
+            "to vegetarian": ""
+        }
+    },
+    "worcestershire sauce": {
+        "category": [],
+        "styles": [],
+        "substitutions": {
+            "to healthy": "",
+            "to italian": "",
+            "to mexican": "hot sauce",
+            "to southern": "bbq sauce",
+            "to vegan": "vegan worcestershire sauce",
             "to vegetarian": ""
         }
     }
