@@ -22,7 +22,7 @@ def ask_user(recipe):
         if response >= 1 and response <= len(possible_transformation):
             break;
         print("input is invalid, please input a number again: ")
-        response = input()
+        response = int(input())
         
     print("Transforming this recipe "+possible_transformation[response-1])
     transform_recipe(possible_transformation[response-1], recipe)
