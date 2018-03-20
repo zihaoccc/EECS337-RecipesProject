@@ -1,0 +1,4 @@
+Worked extensively on creating the kb, both it's design and implementation
+Made the transformation code
+Created the command line interface
+Added a lot of stuff to the kb
